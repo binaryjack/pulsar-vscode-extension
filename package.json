@@ -1,0 +1,83 @@
+{
+  "name": "pulsar-vscode",
+  "displayName": "Pulsar Language Support",
+  "description": "Syntax highlighting and IntelliSense for Pulsar (.psr) files",
+  "version": "0.3.0",
+  "publisher": "binaryjack",
+  "engines": {
+    "vscode": "^1.108.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "psr",
+    "pulsar",
+    "reactive",
+    "jsx",
+    "typescript",
+    "component",
+    "signal"
+  ],
+  "activationEvents": [
+    "onLanguage:psr"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "psr",
+        "aliases": [
+          "Pulsar",
+          "psr"
+        ],
+        "extensions": [
+          ".psr"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/psr-icon-light.svg",
+          "dark": "./icons/psr-icon-dark.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "psr",
+        "scopeName": "source.psr",
+        "path": "./syntaxes/psr.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "psr",
+        "path": "./snippets/psr.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "psr-icons",
+        "label": "PSR File Icons",
+        "path": "./fileicons/psr-icon-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.30",
+    "@types/vscode": "^1.108.1",
+    "@vscode/vsce": "^2.32.0",
+    "typescript": "^5.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/binaryjack/pulsar-vscode-extension"
+  },
+  "license": "MIT"
+}

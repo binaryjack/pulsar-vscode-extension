@@ -1,0 +1,68 @@
+{
+  "PSR Component": {
+    "prefix": "component",
+    "body": [
+      "component ${1:ComponentName}($2) {",
+      "\treturn (",
+      "\t\t<${3:div}>",
+      "\t\t\t$0",
+      "\t\t</${3:div}>",
+      "\t);",
+      "}"
+    ],
+    "description": "Create a PSR component"
+  },
+  "Signal Declaration": {
+    "prefix": "signal",
+    "body": ["const [${1:value}, set${1/(.*)/${1:/capitalize}/}] = signal($2);"],
+    "description": "Create a signal"
+  },
+  "Signal with Initial Value": {
+    "prefix": "signalInit",
+    "body": ["const [${1:value}, set${1/(.*)/${1:/capitalize}/}] = signal(${2:initialValue});"],
+    "description": "Create a signal with initial value"
+  },
+  "Create Effect": {
+    "prefix": "effect",
+    "body": ["createEffect(() => {", "\t$0", "});"],
+    "description": "Create an effect"
+  },
+  "Create Memo": {
+    "prefix": "memo",
+    "body": ["const ${1:memoValue} = createMemo(() => {", "\treturn $0;", "});"],
+    "description": "Create a computed memo"
+  },
+  "JSX Element": {
+    "prefix": "el",
+    "body": ["<${1:div} ${2:className}=\"$3\">", "\t$0", "</${1:div}>"],
+    "description": "Create a JSX element"
+  },
+  "Component with Props": {
+    "prefix": "componentProps",
+    "body": [
+      "component ${1:ComponentName}({ $2 }: { $3 }) {",
+      "\treturn (",
+      "\t\t<${4:div}>",
+      "\t\t\t$0",
+      "\t\t</${4:div}>",
+      "\t);",
+      "}"
+    ],
+    "description": "Create a PSR component with props"
+  },
+  "Component with Signal": {
+    "prefix": "componentSignal",
+    "body": [
+      "component ${1:ComponentName}() {",
+      "\tconst [${2:value}, set${2/(.*)/${1:/capitalize}/}] = signal(${3:0});",
+      "\t",
+      "\treturn (",
+      "\t\t<${4:div}>",
+      "\t\t\t{${2:value}()}",
+      "\t\t</${4:div}>",
+      "\t);",
+      "}"
+    ],
+    "description": "Create a PSR component with signal"
+  }
+}

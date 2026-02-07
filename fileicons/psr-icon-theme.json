@@ -1,0 +1,12 @@
+{
+  "iconDefinitions": {
+    "psr-file": {
+      "iconPath": "../icons/psr-icon.svg"
+    }
+  },
+  "fileExtensions": {
+    "psr": "psr-file"
+  },
+  "file": "psr-file",
+  "hidesExplorerArrows": false
+}
