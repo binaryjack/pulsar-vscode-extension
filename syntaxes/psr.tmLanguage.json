@@ -6,6 +6,7 @@
     { "include": "#comments" },
     { "include": "#component-declaration" },
     { "include": "#signal-declaration" },
+    { "include": "#jsx-fragment" },
     { "include": "#jsx" },
     { "include": "#keywords" },
     { "include": "#strings" },
@@ -51,24 +52,62 @@
         }
       ]
     },
+    "jsx-fragment": {
+      "patterns": [
+        {
+          "name": "meta.tag.fragment.jsx",
+          "begin": "(<>)",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.fragment.begin.jsx" }
+          },
+          "end": "(</?>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.fragment.end.jsx" }
+          },
+          "patterns": [
+            { "include": "#jsx-fragment" },
+            { "include": "#jsx-level-1" }
+          ]
+        }
+      ]
+    },
     "jsx": {
-      "patterns": [{ "include": "#jsx-level-1" }]
+      "patterns": [
+        { "include": "#jsx-fragment" },
+        { "include": "#jsx-level-1" }
+      ]
     },
     "jsx-level-1": {
       "patterns": [
         {
-          "name": "meta.tag.jsx.level-1",
-          "begin": "(<)([a-zA-Z][a-zA-Z0-9]*)",
+          "name": "meta.tag.component.jsx.level-1",
+          "begin": "(<)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))",
           "beginCaptures": {
-            "1": { "name": "punctuation.definition.tag.begin.jsx.level-1" },
-            "2": { "name": "entity.name.tag.jsx.level-1" }
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "support.class.component.jsx" }
           },
-          "end": "(/>)|(</)([a-zA-Z][a-zA-Z0-9]*)(>)",
+          "end": "(/>)|(<\\/)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))(>)",
           "endCaptures": {
-            "1": { "name": "punctuation.definition.tag.self-closing.jsx.level-1" },
-            "2": { "name": "punctuation.definition.tag.begin.jsx.level-1" },
-            "3": { "name": "entity.name.tag.jsx.level-1" },
-            "4": { "name": "punctuation.definition.tag.end.jsx.level-1" }
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "support.class.component.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
+          },
+          "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children-level-1" }]
+        },
+        {
+          "name": "meta.tag.html.jsx.level-1",
+          "begin": "(<)([a-z][a-zA-Z0-9-]*)",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "entity.name.tag.html.jsx" }
+          },
+          "end": "(/>)|(<\\/)([a-z][a-zA-Z0-9-]*)(>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "entity.name.tag.html.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
           },
           "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children-level-1" }]
         }
@@ -77,18 +116,34 @@
     "jsx-level-2": {
       "patterns": [
         {
-          "name": "meta.tag.jsx.level-2",
-          "begin": "(<)([a-zA-Z][a-zA-Z0-9]*)",
+          "name": "meta.tag.component.jsx.level-2",
+          "begin": "(<)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))",
           "beginCaptures": {
-            "1": { "name": "punctuation.definition.tag.begin.jsx.level-2" },
-            "2": { "name": "entity.name.tag.jsx.level-2" }
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "support.class.component.jsx" }
           },
-          "end": "(/>)|(</)([a-zA-Z][a-zA-Z0-9]*)(>)",
+          "end": "(/>)|(<\\/)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))(>)",
           "endCaptures": {
-            "1": { "name": "punctuation.definition.tag.self-closing.jsx.level-2" },
-            "2": { "name": "punctuation.definition.tag.begin.jsx.level-2" },
-            "3": { "name": "entity.name.tag.jsx.level-2" },
-            "4": { "name": "punctuation.definition.tag.end.jsx.level-2" }
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "support.class.component.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
+          },
+          "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children-level-2" }]
+        },
+        {
+          "name": "meta.tag.html.jsx.level-2",
+          "begin": "(<)([a-z][a-zA-Z0-9-]*)",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "entity.name.tag.html.jsx" }
+          },
+          "end": "(/>)|(<\\/)([a-z][a-zA-Z0-9-]*)(>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "entity.name.tag.html.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
           },
           "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children-level-2" }]
         }
@@ -97,18 +152,34 @@
     "jsx-level-3": {
       "patterns": [
         {
-          "name": "meta.tag.jsx.level-3",
-          "begin": "(<)([a-zA-Z][a-zA-Z0-9]*)",
+          "name": "meta.tag.component.jsx.level-3",
+          "begin": "(<)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))",
           "beginCaptures": {
-            "1": { "name": "punctuation.definition.tag.begin.jsx.level-3" },
-            "2": { "name": "entity.name.tag.jsx.level-3" }
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "support.class.component.jsx" }
           },
-          "end": "(/>)|(</)([a-zA-Z][a-zA-Z0-9]*)(>)",
+          "end": "(/>)|(<\\/)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))(>)",
           "endCaptures": {
-            "1": { "name": "punctuation.definition.tag.self-closing.jsx.level-3" },
-            "2": { "name": "punctuation.definition.tag.begin.jsx.level-3" },
-            "3": { "name": "entity.name.tag.jsx.level-3" },
-            "4": { "name": "punctuation.definition.tag.end.jsx.level-3" }
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "support.class.component.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
+          },
+          "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children-level-3" }]
+        },
+        {
+          "name": "meta.tag.html.jsx.level-3",
+          "begin": "(<)([a-z][a-zA-Z0-9-]*)",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "entity.name.tag.html.jsx" }
+          },
+          "end": "(/>)|(<\\/)([a-z][a-zA-Z0-9-]*)(>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "entity.name.tag.html.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
           },
           "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children-level-3" }]
         }
@@ -117,18 +188,34 @@
     "jsx-level-4": {
       "patterns": [
         {
-          "name": "meta.tag.jsx.level-4",
-          "begin": "(<)([a-zA-Z][a-zA-Z0-9]*)",
+          "name": "meta.tag.component.jsx.level-4",
+          "begin": "(<)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))",
           "beginCaptures": {
-            "1": { "name": "punctuation.definition.tag.begin.jsx.level-4" },
-            "2": { "name": "entity.name.tag.jsx.level-4" }
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "support.class.component.jsx" }
           },
-          "end": "(/>)|(</)([a-zA-Z][a-zA-Z0-9]*)(>)",
+          "end": "(/>)|(<\\/)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))(>)",
           "endCaptures": {
-            "1": { "name": "punctuation.definition.tag.self-closing.jsx.level-4" },
-            "2": { "name": "punctuation.definition.tag.begin.jsx.level-4" },
-            "3": { "name": "entity.name.tag.jsx.level-4" },
-            "4": { "name": "punctuation.definition.tag.end.jsx.level-4" }
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "support.class.component.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
+          },
+          "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children-level-4" }]
+        },
+        {
+          "name": "meta.tag.html.jsx.level-4",
+          "begin": "(<)([a-z][a-zA-Z0-9-]*)",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "entity.name.tag.html.jsx" }
+          },
+          "end": "(/>)|(<\\/)([a-z][a-zA-Z0-9-]*)(>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "entity.name.tag.html.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
           },
           "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children-level-4" }]
         }
@@ -137,18 +224,142 @@
     "jsx-level-5": {
       "patterns": [
         {
-          "name": "meta.tag.jsx.level-5",
-          "begin": "(<)([a-zA-Z][a-zA-Z0-9]*)",
+          "name": "meta.tag.component.jsx.level-5",
+          "begin": "(<)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))",
           "beginCaptures": {
-            "1": { "name": "punctuation.definition.tag.begin.jsx.level-5" },
-            "2": { "name": "entity.name.tag.jsx.level-5" }
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "support.class.component.jsx" }
           },
-          "end": "(/>)|(</)([a-zA-Z][a-zA-Z0-9]*)(>)",
+          "end": "(/>)|(<\\/)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))(>)",
           "endCaptures": {
-            "1": { "name": "punctuation.definition.tag.self-closing.jsx.level-5" },
-            "2": { "name": "punctuation.definition.tag.begin.jsx.level-5" },
-            "3": { "name": "entity.name.tag.jsx.level-5" },
-            "4": { "name": "punctuation.definition.tag.end.jsx.level-5" }
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "support.class.component.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
+          },
+          "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children-level-5" }]
+        },
+        {
+          "name": "meta.tag.html.jsx.level-5",
+          "begin": "(<)([a-z][a-zA-Z0-9-]*)",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "entity.name.tag.html.jsx" }
+          },
+          "end": "(/>)|(<\\/)([a-z][a-zA-Z0-9-]*)(>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "entity.name.tag.html.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
+          },
+          "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children-level-5" }]
+        }
+      ]
+    },
+    "jsx-level-6": {
+      "patterns": [
+        {
+          "name": "meta.tag.component.jsx.level-6",
+          "begin": "(<)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "support.class.component.jsx" }
+          },
+          "end": "(/>)|(<\\/)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))(>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "support.class.component.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
+          },
+          "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children-level-6" }]
+        },
+        {
+          "name": "meta.tag.html.jsx.level-6",
+          "begin": "(<)([a-z][a-zA-Z0-9-]*)",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "entity.name.tag.html.jsx" }
+          },
+          "end": "(/>)|(<\\/)([a-z][a-zA-Z0-9-]*)(>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "entity.name.tag.html.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
+          },
+          "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children-level-6" }]
+        }
+      ]
+    },
+    "jsx-level-7": {
+      "patterns": [
+        {
+          "name": "meta.tag.component.jsx.level-7",
+          "begin": "(<)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "support.class.component.jsx" }
+          },
+          "end": "(/>)|(<\\/)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))(>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "support.class.component.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
+          },
+          "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children-level-7" }]
+        },
+        {
+          "name": "meta.tag.html.jsx.level-7",
+          "begin": "(<)([a-z][a-zA-Z0-9-]*)",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "entity.name.tag.html.jsx" }
+          },
+          "end": "(/>)|(<\\/)([a-z][a-zA-Z0-9-]*)(>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "entity.name.tag.html.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
+          },
+          "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children-level-7" }]
+        }
+      ]
+    },
+    "jsx-level-8": {
+      "patterns": [
+        {
+          "name": "meta.tag.component.jsx.level-8",
+          "begin": "(<)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "support.class.component.jsx" }
+          },
+          "end": "(/>)|(<\\/)((?:[A-Z][a-zA-Z0-9]*(?:\\.[A-Za-z][a-zA-Z0-9]*)*))(>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "support.class.component.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
+          },
+          "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children" }]
+        },
+        {
+          "name": "meta.tag.html.jsx.level-8",
+          "begin": "(<)([a-z][a-zA-Z0-9-]*)",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.begin.jsx" },
+            "2": { "name": "entity.name.tag.html.jsx" }
+          },
+          "end": "(/>)|(<\\/)([a-z][a-zA-Z0-9-]*)(>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.self-closing.jsx" },
+            "2": { "name": "punctuation.definition.tag.begin.jsx" },
+            "3": { "name": "entity.name.tag.html.jsx" },
+            "4": { "name": "punctuation.definition.tag.end.jsx" }
           },
           "patterns": [{ "include": "#jsx-attributes" }, { "include": "#jsx-children" }]
         }
@@ -158,17 +369,26 @@
       "patterns": [
         {
           "name": "entity.other.attribute-name.jsx",
-          "match": "\\b[a-zA-Z][a-zA-Z0-9-]*\\b(?==)"
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_:-]*\\b(?=\\s*=)"
+        },
+        {
+          "name": "entity.other.attribute-name.jsx",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b(?=[\\s/>=])"
+        },
+        {
+          "name": "keyword.operator.assignment.jsx",
+          "match": "="
+        },
+        {
+          "name": "punctuation.definition.tag.end.jsx",
+          "match": ">"
         },
         {
           "name": "string.quoted.double.jsx",
           "begin": "\"",
           "end": "\"",
           "patterns": [
-            {
-              "name": "constant.character.escape.jsx",
-              "match": "\\\\."
-            }
+            { "name": "constant.character.escape.jsx", "match": "\\\\." }
           ]
         },
         {
@@ -176,98 +396,89 @@
           "begin": "'",
           "end": "'",
           "patterns": [
-            {
-              "name": "constant.character.escape.jsx",
-              "match": "\\\\."
-            }
+            { "name": "constant.character.escape.jsx", "match": "\\\\." }
           ]
         },
         {
           "name": "meta.embedded.expression.jsx",
           "begin": "\\{",
           "end": "\\}",
+          "beginCaptures": { "0": { "name": "punctuation.section.embedded.begin.jsx" } },
+          "endCaptures": { "0": { "name": "punctuation.section.embedded.end.jsx" } },
           "patterns": [{ "include": "$self" }]
         }
       ]
     },
     "jsx-children": {
       "patterns": [
-        {
-          "name": "meta.jsx.text.jsx",
-          "match": "[^<>{}&]+",
-          "comment": "Plain text content between JSX tags"
-        },
-        {
-          "name": "meta.embedded.expression.jsx",
-          "begin": "\\{",
-          "end": "\\}",
-          "patterns": [{ "include": "$self" }]
-        },
+        { "name": "meta.jsx.text.jsx", "match": "[^<>{}&]+" },
+        { "include": "#jsx-embedded-expression" },
+        { "include": "#jsx-fragment" },
         { "include": "#jsx-level-1" }
       ]
     },
+    "jsx-embedded-expression": {
+      "name": "meta.embedded.expression.jsx",
+      "begin": "\\{",
+      "end": "\\}",
+      "beginCaptures": { "0": { "name": "punctuation.section.embedded.begin.jsx" } },
+      "endCaptures": { "0": { "name": "punctuation.section.embedded.end.jsx" } },
+      "patterns": [{ "include": "$self" }]
+    },
     "jsx-children-level-1": {
       "patterns": [
-        {
-          "name": "meta.jsx.text.jsx",
-          "match": "[^<>{}&]+",
-          "comment": "Plain text content between JSX tags"
-        },
-        {
-          "name": "meta.embedded.expression.jsx",
-          "begin": "\\{",
-          "end": "\\}",
-          "patterns": [{ "include": "$self" }]
-        },
+        { "name": "meta.jsx.text.jsx", "match": "[^<>{}&]+" },
+        { "include": "#jsx-embedded-expression" },
+        { "include": "#jsx-fragment" },
         { "include": "#jsx-level-2" }
       ]
     },
     "jsx-children-level-2": {
       "patterns": [
-        {
-          "name": "meta.jsx.text.jsx",
-          "match": "[^<>{}&]+",
-          "comment": "Plain text content between JSX tags"
-        },
-        {
-          "name": "meta.embedded.expression.jsx",
-          "begin": "\\{",
-          "end": "\\}",
-          "patterns": [{ "include": "$self" }]
-        },
+        { "name": "meta.jsx.text.jsx", "match": "[^<>{}&]+" },
+        { "include": "#jsx-embedded-expression" },
+        { "include": "#jsx-fragment" },
         { "include": "#jsx-level-3" }
       ]
     },
     "jsx-children-level-3": {
       "patterns": [
-        {
-          "name": "meta.jsx.text.jsx",
-          "match": "[^<>{}&]+",
-          "comment": "Plain text content between JSX tags"
-        },
-        {
-          "name": "meta.embedded.expression.jsx",
-          "begin": "\\{",
-          "end": "\\}",
-          "patterns": [{ "include": "$self" }]
-        },
+        { "name": "meta.jsx.text.jsx", "match": "[^<>{}&]+" },
+        { "include": "#jsx-embedded-expression" },
+        { "include": "#jsx-fragment" },
         { "include": "#jsx-level-4" }
       ]
     },
     "jsx-children-level-4": {
       "patterns": [
-        {
-          "name": "meta.jsx.text.jsx",
-          "match": "[^<>{}&]+",
-          "comment": "Plain text content between JSX tags"
-        },
-        {
-          "name": "meta.embedded.expression.jsx",
-          "begin": "\\{",
-          "end": "\\}",
-          "patterns": [{ "include": "$self" }]
-        },
+        { "name": "meta.jsx.text.jsx", "match": "[^<>{}&]+" },
+        { "include": "#jsx-embedded-expression" },
+        { "include": "#jsx-fragment" },
         { "include": "#jsx-level-5" }
+      ]
+    },
+    "jsx-children-level-5": {
+      "patterns": [
+        { "name": "meta.jsx.text.jsx", "match": "[^<>{}&]+" },
+        { "include": "#jsx-embedded-expression" },
+        { "include": "#jsx-fragment" },
+        { "include": "#jsx-level-6" }
+      ]
+    },
+    "jsx-children-level-6": {
+      "patterns": [
+        { "name": "meta.jsx.text.jsx", "match": "[^<>{}&]+" },
+        { "include": "#jsx-embedded-expression" },
+        { "include": "#jsx-fragment" },
+        { "include": "#jsx-level-7" }
+      ]
+    },
+    "jsx-children-level-7": {
+      "patterns": [
+        { "name": "meta.jsx.text.jsx", "match": "[^<>{}&]+" },
+        { "include": "#jsx-embedded-expression" },
+        { "include": "#jsx-fragment" },
+        { "include": "#jsx-level-8" }
       ]
     },
     "keywords": {
