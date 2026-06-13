@@ -43,14 +43,14 @@ Phase 4B is now complete: Interactive webview panel with rich trace visualizatio
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  Pulsar Transformer (pulsar-transformer package)       │
+│  Pulsar Transformer (synetics-transformer package)       │
 │  - init-tracing.ts instruments 12 methods              │
 │  - HTTP Target sends events to localhost:9339          │
 └──────────────────────┬──────────────────────────────────┘
                        │ HTTP POST /trace
                        ▼
 ┌─────────────────────────────────────────────────────────┐
-│  VS Code Extension (pulsar-vscode-extension)            │
+│  VS Code Extension (synetics-vscode-extension)            │
 │                                                           │
 │  ┌────────────────────────────────────────────────┐    │
 │  │  tracer-server.ts (HTTP Server)                │    │
@@ -251,7 +251,7 @@ vscode.postMessage({
 ## File Structure
 
 ```
-pulsar-vscode-extension/
+synetics-vscode-extension/
 ├── src/
 │   ├── extension.ts                 # Registers webview provider
 │   └── tracer/

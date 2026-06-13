@@ -1,7 +1,7 @@
 {
-  "name": "pulsar-vscode",
-  "displayName": "Pulsar Language Support",
-  "description": "Syntax highlighting and IntelliSense for Pulsar (.psr) files",
+  "name": "synetics-vscode",
+  "displayName": "Synetics Language Support",
+  "description": "Syntax highlighting and IntelliSense for Synetics (.syn) files",
   "version": "0.3.0",
   "publisher": "binaryjack",
   "engines": {
@@ -11,8 +11,8 @@
     "Programming Languages"
   ],
   "keywords": [
-    "psr",
-    "pulsar",
+    "syn",
+    "synetics",
     "reactive",
     "jsx",
     "typescript",
@@ -20,19 +20,19 @@
     "signal"
   ],
   "activationEvents": [
-    "onLanguage:psr"
+    "onLanguage:syn"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "languages": [
       {
-        "id": "psr",
+        "id": "syn",
         "aliases": [
-          "Pulsar",
-          "psr"
+          "Synetics",
+          "syn"
         ],
         "extensions": [
-          ".psr"
+          ".syn"
         ],
         "configuration": "./language-configuration.json",
         "icon": {
@@ -43,22 +43,22 @@
     ],
     "grammars": [
       {
-        "language": "psr",
-        "scopeName": "source.psr",
-        "path": "./syntaxes/psr.tmLanguage.json"
+        "language": "syn",
+        "scopeName": "source.syn",
+        "path": "./syntaxes/syn.tmLanguage.json"
       }
     ],
     "snippets": [
       {
-        "language": "psr",
-        "path": "./snippets/psr.json"
+        "language": "syn",
+        "path": "./snippets/syn.json"
       }
     ],
     "iconThemes": [
       {
-        "id": "psr-icons",
-        "label": "PSR File Icons",
-        "path": "./fileicons/psr-icon-theme.json"
+        "id": "syn-icons",
+        "label": "SYN File Icons",
+        "path": "./fileicons/syn-icon-theme.json"
       }
     ]
   },
@@ -77,7 +77,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/binaryjack/pulsar-vscode-extension"
+    "url": "https://github.com/binaryjack/synetics-vscode-extension"
   },
   "license": "MIT",
   "packageManager": "pnpm@10.28.2+sha512.41872f037ad22f7348e3b1debbaf7e867cfd448f2726d9cf74c08f19507c31d2c8e7a11525b983febc2df640b5438dee6023ebb1f84ed43cc2d654d2bc326264"

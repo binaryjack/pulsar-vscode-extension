@@ -1,12 +1,12 @@
 # Pulsar VS Code Extension
 
-This extension provides comprehensive language support for Pulsar (`.psr`) files.
+This extension provides comprehensive language support for Pulsar (`.syn`) files.
 
 ## Features
 
 - **Syntax Highlighting**: TSX-like syntax with multi-level DOM element differentiation
 - **Code Snippets**: Quick snippets for common Pulsar patterns
-- **File Icons**: Custom icon for `.psr` files
+- **File Icons**: Custom icon for `.syn` files
 - **IntelliSense**: Basic autocomplete support
 
 ## Development
@@ -52,7 +52,7 @@ Component names (PascalCase) are **bold** for easy identification.
 ## File Structure
 
 ```
-pulsar-vscode-extension/
+synetics-vscode-extension/
 ├── src/
 │   └── extension.ts           # Main extension code
 ├── syntaxes/

@@ -7,7 +7,7 @@
 1. **Build the extension:**
 
 ```powershell
-cd packages\pulsar-vscode-extension
+cd packages\synetics-vscode-extension
 pnpm install
 pnpm run build
 pnpm run package
@@ -32,18 +32,18 @@ For testing during development:
 
 1. Open the extension folder in VS Code:
 ```powershell
-code packages\pulsar-vscode-extension
+code packages\synetics-vscode-extension
 ```
 
 2. Press `F5` to launch Extension Development Host
 
-3. Open a `.psr` file to see the syntax highlighting
+3. Open a `.syn` file to see the syntax highlighting
 
 ## Verification
 
 After installation:
 
-1. Open any `.psr` file in your workspace
+1. Open any `.syn` file in your workspace
 2. Check the language mode in the bottom-right corner - it should show "Pulsar"
 3. Verify syntax highlighting is working with colors:
    - **Root elements**: Cyan/Teal
@@ -94,7 +94,7 @@ You can customize the syntax colors in your VS Code settings:
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
-        "scope": "entity.name.tag.jsx.psr",
+        "scope": "entity.name.tag.jsx.syn",
         "settings": {
           "foreground": "#YOUR_COLOR"
         }
@@ -118,7 +118,7 @@ You can customize the syntax colors in your VS Code settings:
 
 ### Syntax highlighting not working
 
-1. Verify the file extension is `.psr`
+1. Verify the file extension is `.syn`
 2. Check the language mode (bottom-right corner)
 3. If showing "Plain Text", click it and select "Pulsar"
 4. Reload the window if needed

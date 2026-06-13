@@ -56,13 +56,13 @@ process.env.PULSAR_TRACE = '1';
 process.env.PULSAR_TRACE_CHANNELS = 'lexer,parser';
 process.env.PULSAR_TRACE_HTTP = 'http://localhost:9339/trace';
 
-import { transform } from '@pulsar-framework/transformer';
+import { transform } from '@synetics/transformer';
 // ... your code
 ```
 
-### 3. Save a .psr File or Run Build
+### 3. Save a .syn File or Run Build
 
-When Vite transforms your `.psr` files, events stream to VS Code:
+When Vite transforms your `.syn` files, events stream to VS Code:
 
 ```
 🚀 Pulsar Tracer Started
@@ -127,7 +127,7 @@ PULSAR_TRACE_CHANNELS=parser
 PULSAR_TRACE_HTTP=http://localhost:9339/trace
 ```
 
-Save your problematic `.psr` file → see exact parse operations in VS Code.
+Save your problematic `.syn` file → see exact parse operations in VS Code.
 
 ### Performance Profiling
 
@@ -145,7 +145,7 @@ Look for `function.end` events with high duration values:
 ### Development Workflow
 
 1. `Pulsar: Start Tracer` once per session
-2. Edit `.psr` files
+2. Edit `.syn` files
 3. Vite hot-reload triggers transformation
 4. Events appear in Output Channel
 5. Debug issues in real-time
@@ -232,7 +232,7 @@ PULSAR_TRACE_HTTP=http://localhost:9339/trace
 
 ```bash
 pnpm run dev  # Start Vite
-# Edit .psr files → See traces in VS Code!
+# Edit .syn files → See traces in VS Code!
 ```
 
 ---
@@ -241,10 +241,10 @@ pnpm run dev  # Start Vite
 
 Found a bug? Have an idea?
 
-1. Open issue: https://github.com/binaryjack/pulsar-vscode-extension
+1. Open issue: https://github.com/binaryjack/synetics-vscode-extension
 2. Submit PR: Follow contribution guidelines
 3. Discuss: Join community discussions
 
 ---
 
-**Built with ❤️ for the Pulsar Framework**
+**Built with ❤️ for the Synetics framework**

@@ -90,7 +90,7 @@ Based on research from official Microsoft TypeScript-TmLanguage repository patte
 - `component` keyword support
 - Signal function highlighting (`signal`, `createSignal`, `createEffect`, `createMemo`)
 - JSX syntax support
-- Custom file icons for `.psr` files
+- Custom file icons for `.syn` files
 - Light/Dark theme icon variants
 - Auto-closing brackets and JSX tags
 - Code folding support

@@ -66,7 +66,7 @@
 
 ## Supported File Extensions
 
-- `.psr` - Pulsar Source files
+- `.syn` - Pulsar Source files
 
 ## Syntax Highlighting Examples
 
@@ -135,7 +135,7 @@ Future versions will include:
 
 ## Contributing
 
-Contributions welcome! This extension is part of the Pulsar Framework project.
+Contributions welcome! This extension is part of the Synetics framework project.
 
 ## License
 
@@ -143,5 +143,5 @@ MIT
 
 ---
 
-**Pulsar Framework** - Fine-grained reactive UI framework  
-[Documentation](https://pulsar.dev) | [GitHub](https://github.com/binaryjack/visual-schema-builder)
+**Synetics framework** - Fine-grained reactive UI framework  
+[Documentation](https://synetics.dev) | [GitHub](https://github.com/binaryjack/visual-schema-builder)

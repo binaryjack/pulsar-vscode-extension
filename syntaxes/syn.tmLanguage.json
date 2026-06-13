@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "PSR",
-  "scopeName": "source.psr",
+  "scopeName": "source.syn",
   "patterns": [
     { "include": "#comments" },
     { "include": "#component-declaration" },
@@ -19,11 +19,11 @@
     "comments": {
       "patterns": [
         {
-          "name": "comment.line.double-slash.psr",
+          "name": "comment.line.double-slash.syn",
           "match": "//.*$"
         },
         {
-          "name": "comment.block.psr",
+          "name": "comment.block.syn",
           "begin": "/\\*",
           "end": "\\*/"
         }
@@ -32,11 +32,11 @@
     "component-declaration": {
       "patterns": [
         {
-          "name": "meta.component.psr",
+          "name": "meta.component.syn",
           "match": "\\b(component)\\s+([A-Z][a-zA-Z0-9_]*)",
           "captures": {
-            "1": { "name": "keyword.control.component.psr" },
-            "2": { "name": "entity.name.function.component.psr" }
+            "1": { "name": "keyword.control.component.syn" },
+            "2": { "name": "entity.name.function.component.syn" }
           }
         }
       ]
@@ -44,10 +44,10 @@
     "signal-declaration": {
       "patterns": [
         {
-          "name": "meta.signal.psr",
+          "name": "meta.signal.syn",
           "match": "\\b(signal|createSignal|createEffect|createMemo)\\b",
           "captures": {
-            "1": { "name": "support.function.signal.psr" }
+            "1": { "name": "support.function.signal.syn" }
           }
         }
       ]
@@ -484,23 +484,23 @@
     "keywords": {
       "patterns": [
         {
-          "name": "keyword.control.psr",
+          "name": "keyword.control.syn",
           "match": "\\b(if|else|switch|case|default|for|while|do|break|continue|return|try|catch|finally|throw)\\b"
         },
         {
-          "name": "keyword.other.psr",
+          "name": "keyword.other.syn",
           "match": "\\b(const|let|var|function|async|await|import|export|from|as|default|class|interface|type|enum|namespace)\\b"
         },
         {
-          "name": "storage.modifier.psr",
+          "name": "storage.modifier.syn",
           "match": "\\b(public|private|protected|readonly|static)\\b"
         },
         {
-          "name": "constant.language.psr",
+          "name": "constant.language.syn",
           "match": "\\b(true|false|null|undefined|NaN|Infinity)\\b"
         },
         {
-          "name": "variable.language.psr",
+          "name": "variable.language.syn",
           "match": "\\b(this|super)\\b"
         }
       ]
@@ -508,34 +508,34 @@
     "strings": {
       "patterns": [
         {
-          "name": "string.quoted.double.psr",
+          "name": "string.quoted.double.syn",
           "begin": "\"",
           "end": "\"",
           "patterns": [
             {
-              "name": "constant.character.escape.psr",
+              "name": "constant.character.escape.syn",
               "match": "\\\\."
             }
           ]
         },
         {
-          "name": "string.quoted.single.psr",
+          "name": "string.quoted.single.syn",
           "begin": "'",
           "end": "'",
           "patterns": [
             {
-              "name": "constant.character.escape.psr",
+              "name": "constant.character.escape.syn",
               "match": "\\\\."
             }
           ]
         },
         {
-          "name": "string.template.psr",
+          "name": "string.template.syn",
           "begin": "`",
           "end": "`",
           "patterns": [
             {
-              "name": "meta.template.expression.psr",
+              "name": "meta.template.expression.syn",
               "begin": "\\$\\{",
               "end": "\\}",
               "patterns": [{ "include": "$self" }]
@@ -547,7 +547,7 @@
     "numbers": {
       "patterns": [
         {
-          "name": "constant.numeric.psr",
+          "name": "constant.numeric.syn",
           "match": "\\b\\d+(\\.\\d+)?\\b"
         }
       ]
@@ -555,10 +555,10 @@
     "functions": {
       "patterns": [
         {
-          "name": "meta.function.psr",
+          "name": "meta.function.syn",
           "match": "\\b([a-zA-Z_$][a-zA-Z0-9_$]*)\\s*(?=\\()",
           "captures": {
-            "1": { "name": "entity.name.function.psr" }
+            "1": { "name": "entity.name.function.syn" }
           }
         }
       ]
@@ -566,7 +566,7 @@
     "variables": {
       "patterns": [
         {
-          "name": "variable.other.psr",
+          "name": "variable.other.syn",
           "match": "\\b[a-zA-Z_$][a-zA-Z0-9_$]*\\b"
         }
       ]
@@ -574,7 +574,7 @@
     "operators": {
       "patterns": [
         {
-          "name": "keyword.operator.psr",
+          "name": "keyword.operator.syn",
           "match": "(\\+\\+|\\-\\-|\\+|\\-|\\*|\\/|%|===|!==|==|!=|<=|>=|<|>|&&|\\|\\||!|\\?|:|=|\\+=|\\-=|\\*=|\\/=|%=|=>)"
         }
       ]

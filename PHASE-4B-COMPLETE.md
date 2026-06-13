@@ -165,7 +165,7 @@ vscode.postMessage({
 
 ```powershell
 # 1. Build extension
-cd packages/pulsar-vscode-extension
+cd packages/synetics-vscode-extension
 pnpm run build
 
 # 2. Launch Extension Development Host (F5)
@@ -213,7 +213,7 @@ None at this time. All TypeScript errors resolved.
 ## Files Modified
 
 ```
-pulsar-vscode-extension/
+synetics-vscode-extension/
 ├── src/
 │   ├── extension.ts                 # ✅ Updated
 │   └── tracer/

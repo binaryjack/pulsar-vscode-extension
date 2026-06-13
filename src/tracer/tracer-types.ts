@@ -1,6 +1,6 @@
 /**
  * Shared tracer types for VS Code extension
- * Re-exports from @pulsar-framework/dev-tools when available,
+ * Re-exports from @synetics/dev-tools when available,
  * with local fallback for extension-only builds.
  */
 

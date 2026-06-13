@@ -15,7 +15,7 @@
 ### 1. Build Extension
 
 ```powershell
-cd packages/pulsar-vscode-extension
+cd packages/synetics-vscode-extension
 pnpm run build
 ```
 
@@ -64,7 +64,7 @@ A new VS Code window ("Extension Development Host") will open.
 **In your main VS Code window** (not Extension Host), open terminal:
 
 ```powershell
-cd packages/pulsar-transformer
+cd packages/synetics-transformer
 
 # Set environment variables
 $env:PULSAR_TRACE = "1"
@@ -217,7 +217,7 @@ Verify color-coded event borders:
 **Fix:**
 
 ```powershell
-cd packages/pulsar-vscode-extension
+cd packages/synetics-vscode-extension
 rm -r dist
 pnpm run build
 ```
@@ -240,7 +240,7 @@ pnpm run build
 **Check:**
 
 ```powershell
-cd packages/pulsar-vscode-extension
+cd packages/synetics-vscode-extension
 pnpm run build
 ```
 
