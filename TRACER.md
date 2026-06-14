@@ -1,4 +1,4 @@
-# Pulsar Tracer Integration
+# Synetics Tracer Integration
 
 **Real-time transformer tracing in VS Code**
 
@@ -19,7 +19,7 @@
 Open Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`):
 
 ```
-> Pulsar: Start Tracer
+> Synetics: Start Tracer
 ```
 
 This starts an HTTP server on `localhost:9339` listening for trace events.
@@ -65,7 +65,7 @@ import { transform } from '@synetics/transformer';
 When Vite transforms your `.syn` files, events stream to VS Code:
 
 ```
-🚀 Pulsar Tracer Started
+🚀 Synetics Tracer Started
 📡 Listening on http://localhost:9339
 
 [14:23:45] [LEXER     ] function.start    scanTokens
@@ -87,11 +87,11 @@ All commands available via Command Palette:
 
 | Command                      | Description                                  |
 | ---------------------------- | -------------------------------------------- |
-| `Pulsar: Start Tracer`       | Start HTTP server and display Output Channel |
-| `Pulsar: Stop Tracer`        | Stop HTTP server                             |
-| `Pulsar: Clear Trace Output` | Clear Output Channel                         |
-| `Pulsar: Show Tracer Status` | Check if tracer is running                   |
-| `Pulsar: Export Traces`      | Export to file (coming soon)                 |
+| `Synetics: Start Tracer`       | Start HTTP server and display Output Channel |
+| `Synetics: Stop Tracer`        | Stop HTTP server                             |
+| `Synetics: Clear Trace Output` | Clear Output Channel                         |
+| `Synetics: Show Tracer Status` | Check if tracer is running                   |
+| `Synetics: Export Traces`      | Export to file (coming soon)                 |
 
 ---
 
@@ -144,7 +144,7 @@ Look for `function.end` events with high duration values:
 
 ### Development Workflow
 
-1. `Pulsar: Start Tracer` once per session
+1. `Synetics: Start Tracer` once per session
 2. Edit `.syn` files
 3. Vite hot-reload triggers transformation
 4. Events appear in Output Channel
@@ -159,7 +159,7 @@ Look for `function.end` events with high duration values:
 Another tracer instance is running:
 
 ```
-> Pulsar: Stop Tracer
+> Synetics: Stop Tracer
 ```
 
 Or change port in your config:
@@ -170,7 +170,7 @@ PULSAR_TRACE_HTTP=http://localhost:9340/trace
 
 ### No Events Appearing
 
-1. **Check tracer is running:** `> Pulsar: Show Tracer Status`
+1. **Check tracer is running:** `> Synetics: Show Tracer Status`
 2. **Check environment:** Ensure `PULSAR_TRACE=1` is set
 3. **Check URL:** Must be `http://localhost:9339/trace` (include `/trace`)
 4. **Restart Vite:** Changes to `.env` require Vite restart
@@ -180,7 +180,7 @@ PULSAR_TRACE_HTTP=http://localhost:9340/trace
 Check Output Channel is visible:
 
 - View → Output
-- Select "Pulsar Tracer" from dropdown
+- Select "Synetics Tracer" from dropdown
 
 ---
 
@@ -223,10 +223,10 @@ PULSAR_TRACE_HTTP=http://localhost:9339/trace
 
 **VS Code:**
 
-1. Install Pulsar extension
+1. Install Synetics extension
 2. Open Command Palette
-3. `> Pulsar: Start Tracer`
-4. View → Output → "Pulsar Tracer"
+3. `> Synetics: Start Tracer`
+4. View → Output → "Synetics Tracer"
 
 **Terminal:**
 

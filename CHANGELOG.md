@@ -24,9 +24,9 @@ All notable changes to the "psr-language-support" extension will be documented i
 **Example:**
 ```psr
 <div>Hello World</div>
-<h1>Welcome to Pulsar</h1>
+<h1>Welcome to Synetics</h1>
 ```
-- Before: `Hello World` and `Welcome to Pulsar` looked like tags ❌
+- Before: `Hello World` and `Welcome to Synetics` looked like tags ❌
 - After: Text appears as normal content (default text color) ✅
 
 #### Better Attribute Name Highlighting  

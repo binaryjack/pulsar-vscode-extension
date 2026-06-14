@@ -1,4 +1,4 @@
-# Installation Guide - Pulsar VS Code Extension
+# Installation Guide - Synetics VS Code Extension
 
 ## Quick Installation
 
@@ -44,7 +44,7 @@ code packages\synetics-vscode-extension
 After installation:
 
 1. Open any `.syn` file in your workspace
-2. Check the language mode in the bottom-right corner - it should show "Pulsar"
+2. Check the language mode in the bottom-right corner - it should show "Synetics"
 3. Verify syntax highlighting is working with colors:
    - **Root elements**: Cyan/Teal
    - **Nested level 1**: Blue
@@ -110,7 +110,7 @@ You can customize the syntax colors in your VS Code settings:
 
 1. Check if the extension is installed:
    - Go to Extensions view (`Ctrl+Shift+X`)
-   - Search for "Pulsar"
+   - Search for "Synetics"
 
 2. Reload VS Code window:
    - Press `Ctrl+Shift+P`
@@ -120,7 +120,7 @@ You can customize the syntax colors in your VS Code settings:
 
 1. Verify the file extension is `.syn`
 2. Check the language mode (bottom-right corner)
-3. If showing "Plain Text", click it and select "Pulsar"
+3. If showing "Plain Text", click it and select "Synetics"
 4. Reload the window if needed
 
 ### Colors not showing
@@ -137,7 +137,7 @@ code --uninstall-extension binaryjack.pulsar-vscode
 
 Or through VS Code:
 - Go to Extensions view
-- Find "Pulsar Language Support"
+- Find "Synetics Language Support"
 - Click the gear icon → Uninstall
 
 ## Next Steps

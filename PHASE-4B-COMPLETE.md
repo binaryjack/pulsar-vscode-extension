@@ -54,7 +54,7 @@ Phase 4B delivers an interactive webview panel with rich trace visualization, du
    - Added `viewsContainers` for activity bar icon
    - Added `views` for webview panel
    - Uses pulse icon ($(pulse))
-   - "Pulsar Tracer" container + "Trace Events" view
+   - "Synetics Tracer" container + "Trace Events" view
 
 4. **`tsconfig.json`**
    - Added `"types": ["node"]` for Node.js types
@@ -170,7 +170,7 @@ pnpm run build
 
 # 2. Launch Extension Development Host (F5)
 
-# 3. Open Pulsar Tracer panel in sidebar
+# 3. Open Synetics Tracer panel in sidebar
 
 # 4. Start tracer via command
 
@@ -241,11 +241,11 @@ Before marking complete:
 
 ## Commands Available
 
-1. **Pulsar: Start Tracer** - Start HTTP server + recording
-2. **Pulsar: Stop Tracer** - Stop server + recording
-3. **Pulsar: Clear Trace Output** - Clear both UIs
-4. **Pulsar: Show Tracer Status** - Display current status
-5. **Pulsar: Export Traces** - Export to JSON/CSV (webview)
+1. **Synetics: Start Tracer** - Start HTTP server + recording
+2. **Synetics: Stop Tracer** - Stop server + recording
+3. **Synetics: Clear Trace Output** - Clear both UIs
+4. **Synetics: Show Tracer Status** - Display current status
+5. **Synetics: Export Traces** - Export to JSON/CSV (webview)
 
 ## Environment Variables
 
@@ -255,7 +255,7 @@ Before marking complete:
 
 ## User Experience
 
-1. Click "Pulsar Tracer" icon in activity bar
+1. Click "Synetics Tracer" icon in activity bar
 2. Panel opens with "Trace Events" view
 3. Click "Start" to begin recording
 4. Run transformation with env vars

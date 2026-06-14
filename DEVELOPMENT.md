@@ -1,11 +1,11 @@
-# Pulsar VS Code Extension
+# Synetics VS Code Extension
 
-This extension provides comprehensive language support for Pulsar (`.syn`) files.
+This extension provides comprehensive language support for Synetics (`.syn`) files.
 
 ## Features
 
 - **Syntax Highlighting**: TSX-like syntax with multi-level DOM element differentiation
-- **Code Snippets**: Quick snippets for common Pulsar patterns
+- **Code Snippets**: Quick snippets for common Synetics patterns
 - **File Icons**: Custom icon for `.syn` files
 - **IntelliSense**: Basic autocomplete support
 

@@ -1,6 +1,6 @@
 # PSR Language Support for Visual Studio Code
 
-**Pulsar Source (PSR)** syntax highlighting and file icons for Visual Studio Code.
+**Synetics Source (PSR)** syntax highlighting and file icons for Visual Studio Code.
 
 ## Features
 
@@ -17,7 +17,7 @@
 🎨 **Custom File Icons**
 - Distinctive PSR file icon in Explorer
 - Light/Dark theme support
-- Purple gradient theme matching Pulsar brand
+- Purple gradient theme matching Synetics brand
 
 🔧 **Language Features**
 - Auto-closing brackets and tags
@@ -66,7 +66,7 @@
 
 ## Supported File Extensions
 
-- `.syn` - Pulsar Source files
+- `.syn` - Synetics Source files
 
 ## Syntax Highlighting Examples
 

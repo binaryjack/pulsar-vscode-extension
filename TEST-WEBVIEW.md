@@ -35,7 +35,7 @@ A new VS Code window ("Extension Development Host") will open.
 
 **In Extension Development Host:**
 
-1. Look for "Pulsar Tracer" icon in left sidebar activity bar (pulse icon)
+1. Look for "Synetics Tracer" icon in left sidebar activity bar (pulse icon)
 2. Click the icon
 3. Verify "Trace Events" panel appears with:
    - Toolbar (Start, Stop, Clear, Export buttons)
@@ -51,8 +51,8 @@ A new VS Code window ("Extension Development Host") will open.
 **In Extension Development Host:**
 
 1. Open Command Palette (Ctrl+Shift+P)
-2. Run: "Pulsar: Start Tracer"
-3. Verify notification: "Pulsar Tracer started on port 9339"
+2. Run: "Synetics: Start Tracer"
+3. Verify notification: "Synetics Tracer started on port 9339"
 4. Verify webview "Recording indicator" shows pulsing dot
 
 **Expected**: Server starts, webview enters recording mode.
@@ -79,7 +79,7 @@ node ../test-http-client.js
 
 1. **Output Channel**:
    - View → Output
-   - Select "Pulsar Tracer" from dropdown
+   - Select "Synetics Tracer" from dropdown
    - Verify timestamped events appear
 
 2. **Webview Panel**:
@@ -165,8 +165,8 @@ node ../test-http-client.js
 **In Extension Development Host:**
 
 1. Open Command Palette (Ctrl+Shift+P)
-2. Run: "Pulsar: Stop Tracer"
-3. Verify notification: "Pulsar Tracer stopped"
+2. Run: "Synetics: Stop Tracer"
+3. Verify notification: "Synetics Tracer stopped"
 4. Verify webview recording indicator stops pulsing
 5. Run test again from main window
 6. Verify NO new events appear in webview
@@ -226,7 +226,7 @@ pnpm run build
 
 **Check:**
 
-1. Tracer status: Run "Pulsar: Show Tracer Status"
+1. Tracer status: Run "Synetics: Show Tracer Status"
 2. Environment variables set correctly in terminal
 3. HTTP target reachable: `curl http://localhost:9339` (should respond)
 

@@ -35,7 +35,7 @@ Phase 4B is now complete: Interactive webview panel with rich trace visualizatio
 
 ### 4. Package Manifest (`package.json`)
 
-- **Views Container**: "Pulsar Tracer" activity bar icon (pulse)
+- **Views Container**: "Synetics Tracer" activity bar icon (pulse)
 - **View**: "Trace Events" webview in sidebar
 - **Commands**: All 5 tracer commands work with both UIs
 
@@ -43,7 +43,7 @@ Phase 4B is now complete: Interactive webview panel with rich trace visualizatio
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  Pulsar Transformer (synetics-transformer package)       │
+│  Synetics Transformer (synetics-transformer package)       │
 │  - init-tracing.ts instruments 12 methods              │
 │  - HTTP Target sends events to localhost:9339          │
 └──────────────────────┬──────────────────────────────────┘
@@ -88,7 +88,7 @@ Phase 4B is now complete: Interactive webview panel with rich trace visualizatio
 
 - Location: Left sidebar activity bar
 - Icon: Pulse symbol ($(pulse))
-- Title: "Pulsar Tracer"
+- Title: "Synetics Tracer"
 
 ### Webview Panel
 
@@ -113,13 +113,13 @@ Phase 4B is now complete: Interactive webview panel with rich trace visualizatio
 
 ### 1. Open Tracer View
 
-- Click "Pulsar Tracer" icon in activity bar
-- Or use Command Palette: "Pulsar: Start Tracer"
+- Click "Synetics Tracer" icon in activity bar
+- Or use Command Palette: "Synetics: Start Tracer"
 
 ### 2. Start Recording
 
 - Click "Start" in webview toolbar
-- Or use Command: "Pulsar: Start Tracer"
+- Or use Command: "Synetics: Start Tracer"
 - Server starts on port 9339
 - Webview recording indicator pulses
 
@@ -194,14 +194,14 @@ vscode.postMessage({
 
 1. Build extension: `pnpm run build`
 2. Press F5 to launch Extension Development Host
-3. Open Pulsar Tracer view in sidebar
-4. Run Command: "Pulsar: Start Tracer"
+3. Open Synetics Tracer view in sidebar
+4. Run Command: "Synetics: Start Tracer"
 5. In terminal, run transformer with env vars
 6. Verify events appear in both Output Channel and Webview
 7. Test filters: Toggle channel buttons, verify event visibility
 8. Test export: Click Export → JSON, save file, verify contents
 9. Test clear: Click Clear, verify events removed from both UIs
-10. Run Command: "Pulsar: Stop Tracer", verify recording stops
+10. Run Command: "Synetics: Stop Tracer", verify recording stops
 
 ### Expected Results
 
@@ -277,7 +277,7 @@ No additional configuration required. Webview panel uses existing tracer command
 
 ### Events Not Appearing
 
-- Verify tracer server started: "Pulsar: Show Tracer Status"
+- Verify tracer server started: "Synetics: Show Tracer Status"
 - Check PULSAR_TRACE_HTTP env var set correctly
 - Confirm HTTP POST requests reaching port 9339
 - Inspect Output Channel for server logs
